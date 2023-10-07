@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-teal-400;
+}
+
+.ns-root {
+  @apply bg-white h-screen;
+}
+
+.ns-responsive-grid {
+  @apply justify-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5;
+}
+

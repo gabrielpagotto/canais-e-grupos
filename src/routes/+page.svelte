@@ -1,2 +1,17 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+  import type { PageData } from "./$types";
+
+  export let data: PageData;
+</script>
+
+<div class="w-full flex ns-responsive-grid">
+  {#each data.chats as chat}
+    <div
+      class="m-2 rounded bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-teal-400 hover:cursor-pointer transition-colors flex flex-col items-center overflow-hidden"
+    >
+      <img src={chat.iconUrl} alt={chat.title} />
+      <h1 class="font-bold text-lg">{chat.title}</h1>
+      <button class="bg-teal-400 py-1 m-3 px-4 rounded w-[90%]">Entrar</button>
+    </div>
+  {/each}
+</div>
