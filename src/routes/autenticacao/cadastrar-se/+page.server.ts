@@ -22,6 +22,11 @@ export const actions: Actions = {
       return fail(400, { errors, fields })
     }
 
+    if (await prisma.user.findFirst({ where: { email } })) {
+      errors.email = "Este email já está em uso";
+      return fail(400, { errors, fields })
+    }
+
     password = await createPasswordHash(password);
     const user = await prisma.user.create({
       data: {
