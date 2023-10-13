@@ -18,7 +18,7 @@ export const actions: Actions = {
     let userId = data.get("userId");
 
     if (!title || !details || !iconUrl || !accessUrl || !userId) {
-      return fail(400, {title, details, iconUrl, accessUrl, userId, missing: true });
+      return fail(400, { title, details, iconUrl, accessUrl, userId, missing: true });
     }
 
     if (typeof title != 'string' || typeof details != 'string' || typeof iconUrl != 'string' || typeof accessUrl != 'string' || typeof userId != 'string') {
@@ -27,13 +27,13 @@ export const actions: Actions = {
 
     await prisma.chat.create({
       data: {
-          title,
-          details,
-          iconUrl,
-          accessUrl,
-          userId,
-          platform: ChatPlatform.TELEGRAM,
-          type: ChatType.CHANNEL,
+        title,
+        details,
+        iconUrl,
+        accessUrl,
+        userId,
+        platform: ChatPlatform.TELEGRAM,
+        type: ChatType.CHANNEL,
       },
     });
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import TextBox from "$lib/components/text-box.svelte";
   import type { ActionData, PageData } from "./$types";
 
   export let data: PageData;
@@ -16,10 +17,8 @@
     class="flex flex-col justify-center pt-10 bg-white border border-slate-200 w-96 p-4 rounded gap-4"
   >
     <h1 class="pb-4 font-bold text-lg">{title}</h1>
-    <label>
-      Título
-      <input type="text" name="title" id="title" value={form?.title ?? ""} />
-    </label>
+    <TextBox name="title" label="Título" value={form?.title ?? ""} />
+
     <label>
       Detalhes
       <textarea name="details" id="details" />

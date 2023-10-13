@@ -7,6 +7,11 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
+
+	namespace uuid {
+
+	}
 }
+
 
 export { };
