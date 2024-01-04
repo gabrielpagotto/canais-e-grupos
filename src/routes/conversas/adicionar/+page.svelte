@@ -10,20 +10,12 @@
     <title>{title}</title>
 </svelte:head>
 
-<div class="w-full flex items-center justify-center h-full">
-    <form
-        method="post"
-        class="flex flex-col justify-center pt-10 bg-white border border-slate-200 w-96 p-4 rounded gap-4"
-    >
-        <h1 class="pb-4 font-bold text-lg">{title}</h1>
+<div class="flex h-full w-full items-center justify-center">
+    <form method="post" class="flex w-96 flex-col justify-center gap-4 rounded border border-slate-200 bg-white p-4 pt-10">
+        <h1 class="pb-4 text-lg font-bold">{title}</h1>
         <label>
             Título
-            <input
-                type="text"
-                name="title"
-                id="title"
-                value={form?.title ?? ""}
-            />
+            <input type="text" name="title" id="title" value={form?.title ?? ""} />
         </label>
         <label>
             Detalhes
@@ -31,21 +23,11 @@
         </label>
         <label>
             URL do ícone
-            <input
-                type="url"
-                name="iconUrl"
-                id="iconUrl"
-                value={form?.iconUrl ?? ""}
-            />
+            <input type="url" name="iconUrl" id="iconUrl" value={form?.iconUrl ?? ""} />
         </label>
         <label>
             URL de acesso
-            <input
-                type="url"
-                name="accessUrl"
-                id="accessUrl"
-                value={form?.accessUrl ?? ""}
-            />
+            <input type="url" name="accessUrl" id="accessUrl" value={form?.accessUrl ?? ""} />
         </label>
         <label>
             Usuário

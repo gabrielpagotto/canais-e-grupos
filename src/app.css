@@ -9,21 +9,21 @@ body {
 input,
 select,
 textarea {
-    @apply border border-gray-200 rounded px-3 py-1 text-base;
+    @apply rounded border border-gray-200 px-3 py-1 text-base;
 }
 
 button {
-    @apply bg-teal-400 py-1 m-3 px-4 rounded w-[90%] text-white;
+    @apply m-3 w-[90%] rounded bg-teal-400 px-4 py-1 text-white;
 }
 
 label {
-    @apply flex flex-col text-sm
+    @apply flex flex-col text-sm;
 }
 
 .ns-root {
-    @apply bg-slate-50 h-screen;
+    @apply h-screen bg-slate-50;
 }
 
 .ns-responsive-grid {
-    @apply justify-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5;
+    @apply grid grid-cols-1 justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5;
 }
