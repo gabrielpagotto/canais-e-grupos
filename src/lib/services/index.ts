@@ -1,4 +1,4 @@
-import userService from "./user.service";
 import chatService from "./chat.service";
+import userService from "./user.service";
 
-export { userService, chatService };
+export { chatService, userService };

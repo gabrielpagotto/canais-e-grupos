@@ -1,11 +1,10 @@
-import prisma from "$lib/prisma";
+import { chatService, userService } from "$lib/services";
 import { ChatPlatform, ChatType } from "@prisma/client";
 import { fail, redirect } from "@sveltejs/kit";
 import type { Actions, PageServerLoad } from "./$types";
-import { chatService, userService } from "$lib/services";
 
 export const load: PageServerLoad = async () => {
-    return { users: userService.findAll() };
+    return { users: await userService.findAll() };
 };
 
 export const actions: Actions = {

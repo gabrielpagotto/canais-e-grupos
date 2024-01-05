@@ -1,24 +1,24 @@
-import prisma from "$lib/prisma";
+import db from "$lib/db";
 import type { Prisma } from "@prisma/client";
 
 const findById = async (id: string) => {
-    return prisma.user.findFirst({ where: { id } });
+    return db.user.findFirst({ where: { id } });
 };
 
 const findAll = async () => {
-    return prisma.user.findMany();
+    return db.user.findMany();
 };
 
 const create = async (user: Prisma.UserCreateInput) => {
-    return prisma.user.create({ data: user });
+    return db.user.create({ data: user });
 };
 
 const update = async (id: string, user: Prisma.UserUpdateInput) => {
-    return prisma.user.update({ where: { id }, data: user });
+    return db.user.update({ where: { id }, data: user });
 };
 
 const destroy = async (id: string) => {
-    return prisma.user.delete({ where: { id } });
+    return db.user.delete({ where: { id } });
 };
 
 export default { findById, findAll, create, update, destroy };
