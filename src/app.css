@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
 body {
-    @apply bg-teal-400;
+    @apply bg-white;
 }
 
 input,
@@ -13,7 +14,7 @@ textarea {
 }
 
 button {
-    @apply m-3 w-[90%] rounded bg-teal-400 px-4 py-1 text-white;
+    @apply m-3 rounded bg-slate-700 px-4 py-3 text-white;
 }
 
 label {
@@ -21,7 +22,7 @@ label {
 }
 
 .ns-root {
-    @apply h-screen bg-slate-50;
+    @apply h-screen bg-white;
 }
 
 .ns-responsive-grid {
