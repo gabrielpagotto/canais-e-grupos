@@ -1,7 +1,7 @@
 import prisma from "$lib/prisma";
+import { chatService } from "$lib/services";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async () => {
-    const chats = await prisma.chat.findMany({ where: { status: "ACTIVE" } });
-    return { chats };
+    return { chats: await chatService.findAllActive() };
 };

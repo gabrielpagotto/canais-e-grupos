@@ -2,10 +2,10 @@ import prisma from "$lib/prisma";
 import { ChatPlatform, ChatType } from "@prisma/client";
 import { fail, redirect } from "@sveltejs/kit";
 import type { Actions, PageServerLoad } from "./$types";
+import { chatService, userService } from "$lib/services";
 
 export const load: PageServerLoad = async () => {
-    const users = await prisma.user.findMany();
-    return { users };
+    return { users: userService.findAll() };
 };
 
 export const actions: Actions = {
@@ -25,17 +25,16 @@ export const actions: Actions = {
             return fail(400, { incorrect: true });
         }
 
-        await prisma.chat.create({
-            data: {
-                title,
-                details,
-                iconUrl,
-                accessUrl,
-                userId,
-                platform: ChatPlatform.TELEGRAM,
-                type: ChatType.CHANNEL,
-            },
-        });
+        const user = {
+            title,
+            details,
+            iconUrl,
+            accessUrl,
+            userId,
+            platform: ChatPlatform.TELEGRAM,
+            type: ChatType.CHANNEL,
+        };
+        await chatService.create(user);
 
         throw redirect(303, `/`);
     },
